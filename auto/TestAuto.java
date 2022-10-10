@@ -35,6 +35,42 @@ class TestAuto {
                     }
                     break;
 
+                case 2:
+                    for (int cont=0; cont<i; cont++) {
+                        System.out.println("targa="+elenco[cont].getTarga());
+                        System.out.println("velocità="+elenco[cont].getVelocita());
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("dammi la targa");
+                    targa=input.nextLine();
+                    System.out.println("dammi la velocità");
+                    vel=input.nextInt();
+                    vuota=input.nextLine();
+                    for (int cont=0; cont<i; cont++) {
+                        if (targa.equals(elenco[cont].getTarga())) {
+                            elenco[cont].cambia_vel(vel);
+                        }
+                    }
+                    break;
+
+                case 4:
+                    for (int cont=0; cont<i; cont++) {
+                        if (elenco[cont].getTarga().indexOf("000")!=-1) {
+                            System.out.println("targa="+elenco[cont].getTarga());
+                        }
+                    }
+                    break;   
+                
+                case 5:
+                    for (int cont=0; cont<i; cont++) {
+                        if (elenco[cont].palindrome()) {
+                            System.out.println("targa="+elenco[cont].getTarga());
+                        }
+                    }
+                    break;
+                
                 default:
                     break;
             }
