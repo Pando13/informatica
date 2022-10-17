@@ -10,9 +10,12 @@ class Auto {
         }
 
     // metodi
-        public cambia_vel(float velocita){
-            if (velocita>0) {
-                this.velocita=this.velocita+velocita;
+        public void cambia_vel(float vel){
+            if (vel+this.velocita>=0) {
+                this.velocita=this.velocita+vel;
+                System.out.println("velocita passata da "+(this.velocita-vel)+" a "+this.velocita);
+            }else{
+                System.out.println("la velocita non puo essere negativa");
             }
         }
 

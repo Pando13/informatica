@@ -42,3 +42,5 @@ premi 5 per verificare se le targhe del’array
 di oggetti siano palindrome, cioè si leggono nello stesso modo sia da sinistra
 a destra che viceversa (esempi: “anna” o “ailatiditalia”). Per ogni targa
 indicare se è palindroma o no.
+
+premi 6 per verificare che la targa sia nel formato giusto
