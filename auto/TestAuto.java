@@ -12,6 +12,7 @@ class TestAuto {
         Scanner input=new Scanner(System.in);
         int vel, i=0, scelta, temp;
         String targa, vuota;
+        char c;
         Auto elenco[] = new Auto[500];
 
         do {
@@ -83,12 +84,36 @@ class TestAuto {
                 
                 case 6:
                     for (int cont=0; cont<i; cont++) {
+                        boolean valida = true;
+                        if (elenco[cont].getTarga().length()!=7){
+                            System.out.println("lunghezza");
+                            valida = false;
+                        }
                         for (int j=0; j<elenco[cont].getTarga().length(); j++){
-                            System.out.println("bho "+elenco[cont].getTarga().charAt(j));
+                            c = elenco[cont].getTarga().charAt(j);
+                            int ascii = c;
+                            System.out.println("lettere");
+                            if (j<2&&j>4){
+                                if (ascii<65||ascii>90){
+                                    System.out.println("lettere");
+                                    valida = false;
+                                }
+                            }else{
+                                if (ascii<48||ascii>57){
+                                    System.out.println("numeri "+ascii);
+                                    valida = false;
+                                }
+                            }
+                        }
+                        if (valida){
+                            System.out.println("la targa "+elenco[cont].getTarga()+" e' valida");
+                        }else{
+                            System.out.println("la targa "+elenco[cont].getTarga()+" non e' valida");
                         }
                     }
                     break;
-
+// 0 1 2 3 4 5 6
+// a a 1 1 1 a a
                 default:
                     break;
             }
