@@ -22,6 +22,7 @@ class TestAuto {
             System.out.println("premi 3 per accelerare o decelerare la velocita");
             System.out.println("premi 4 per verificare che nelle targhe ci sia 000");
             System.out.println("premi 5 per verificare se le targhe sono palindrome");
+            System.out.println("premi 6 per verificare che sia nel formato giusto");
             scelta=input.nextInt();
 			vuota=input.nextLine();
 
@@ -93,14 +94,12 @@ class TestAuto {
                             c = elenco[cont].getTarga().charAt(j);
                             int ascii = c;
                             System.out.println("lettere");
-                            if (j<2&&j>4){
+                            if (j<2||j>4){
                                 if (ascii<65||ascii>90){
-                                    System.out.println("lettere");
                                     valida = false;
                                 }
                             }else{
                                 if (ascii<48||ascii>57){
-                                    System.out.println("numeri "+ascii);
                                     valida = false;
                                 }
                             }
@@ -112,8 +111,11 @@ class TestAuto {
                         }
                     }
                     break;
-// 0 1 2 3 4 5 6
-// a a 1 1 1 a a
+                
+                case 7:
+                    
+                    break;
+
                 default:
                     break;
             }
