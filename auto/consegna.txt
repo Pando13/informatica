@@ -44,3 +44,5 @@ a destra che viceversa (esempi: “anna” o “ailatiditalia”). Per ogni targ
 indicare se è palindroma o no.
 
 premi 6 per verificare che la targa sia nel formato giusto
+
+premi 7 per trovare la prima e l'ultima targa in ordine alfabetico

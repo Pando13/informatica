@@ -10,8 +10,8 @@ import java.util.*;
 class TestAuto {
     public static void main(String arg[]) {
         Scanner input=new Scanner(System.in);
-        int vel, i=0, scelta, temp;
-        String targa, vuota;
+        int vel, i=0, scelta;
+        String targa, vuota, prima, ultima;
         char c;
         Auto elenco[] = new Auto[500];
 
@@ -23,6 +23,7 @@ class TestAuto {
             System.out.println("premi 4 per verificare che nelle targhe ci sia 000");
             System.out.println("premi 5 per verificare se le targhe sono palindrome");
             System.out.println("premi 6 per verificare che sia nel formato giusto");
+            System.out.println("premi 7 per trovare la prima e l'ultima targa in ordine alfabetico");
             scelta=input.nextInt();
 			vuota=input.nextLine();
 

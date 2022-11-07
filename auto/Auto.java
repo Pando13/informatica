@@ -9,7 +9,6 @@ class Auto {
             this.velocita=velocita;
         }
 
-    // metodi
         public void cambia_vel(float vel){
             if (vel+this.velocita>=0) {
                 this.velocita=this.velocita+vel;
@@ -19,7 +18,6 @@ class Auto {
             }
         }
 
-    // gets
         public String getTarga(){
             return targa;
         }
@@ -38,5 +36,14 @@ class Auto {
             }else{
                 return false;
             }
+        }
+
+        public int compare(String prima, String seconda){
+            for (int j = 0; j<7; j++){
+                while (prima.charAt(j)==seconda.charAt(j)) {
+                    
+                }
+            }
+            return 1;
         }
 }
