@@ -26,7 +26,6 @@ class Prodotto {
         return this.costo;
     }
 
-
     boolean VerificaScadenza(int giorno, int mese){
         if(mese>this.mese){
             return true;
