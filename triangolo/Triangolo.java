@@ -1,3 +1,4 @@
+package triangolo;
 class Triangolo{
 	int lato1,lato2,lato3;
 
@@ -8,16 +9,13 @@ class Triangolo{
 	}
 
 	void visualizza(){
-		System.out.println("lato 1: "+lato1+", lato 2:"+lato2+", lato 3:"+lato3);
+		System.out.println("lato 1: "+lato1+", lato 2:"+lato2+", lato 3: "+lato3);
 	}
 
-	boolean isTri(){
-		boolean b;
-		
+	boolean isTri(){		
 		if((lato1+lato2>lato3)&&(lato1+lato3>lato2)&&(lato2+lato3>lato1)){
 			return true;
-		}
-		else{
+		}else{
 			return false;
 		}
 	}

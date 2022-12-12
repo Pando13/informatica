@@ -1,3 +1,4 @@
+package triangolo;
 class Equilatero extends Triangolo{
 	double altezza;
 
