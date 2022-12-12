@@ -5,7 +5,8 @@ public class TestTriangolo {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
 		Triangolo t1=null;
-		int scelta,p,lato;
+		int scelta, perimetro, lato1, lato2, lato3;
+        double altezza, area;
         String vuota;
 
         do{
@@ -25,14 +26,21 @@ public class TestTriangolo {
                 
                 case 1:
                     do{
-                        System.out.println("dammi lato");
-                        lato=input.nextInt();
+                        System.out.println("dammi lato 1");
+                        lato1=input.nextInt();
                         vuota=input.nextLine();
-						if(lato<1){
-							System.out.println("errore");
-						}
-					}while(lato<1);
-                    t1=new Triangolo(lato);
+					}while(lato1<1);
+                    do{
+                        System.out.println("dammi lato 2");
+                        lato2=input.nextInt();
+                        vuota=input.nextLine();
+                    }while(lato2<1);
+                    do{
+                        System.out.println("dammi lato 3");
+                        lato3=input.nextInt();
+                        vuota=input.nextLine();
+                    }while(lato1<3);
+                    t1=new Triangolo(lato1,lato2,lato3);
                     break;
                 
                 case 2:
@@ -44,11 +52,19 @@ public class TestTriangolo {
                     break;
 
                 case 3:
-                    
+                    if (t1!=null) {
+                        System.out.println("e' un triangolo");
+                    }else{
+                        System.out.println("errore");
+                    }
                     break;
                 
                 case 4:
-                    
+                    if (t1!=null) {
+                        altezza = 
+                    }else{
+                        System.out.println("errore");
+                    }
                     break;
                 
                 case 5:
