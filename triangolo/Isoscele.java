@@ -25,6 +25,7 @@ public class Isoscele extends Triangolo{
                 this.base = lato2;
                 this.obliquo = lato3;
             }
+            
         }             
         
     } 
@@ -43,6 +44,6 @@ public class Isoscele extends Triangolo{
         }
 
         return -1;
-    }    
+    }
 
 }

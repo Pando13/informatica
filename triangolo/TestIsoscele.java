@@ -47,9 +47,12 @@ public class TestIsoscele {
                             System.out.println("errore");
                         }
                     }while(altezza<1);
-                    i(ob,ob,base,altezza);
+                    i=new Isoscele(ob,ob,base,altezza);
                     break;
                 case 2:
+                    i.visualizza();
+                    break;
+                case 3:
                     
                     break;
                 default:
