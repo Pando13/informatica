@@ -1,64 +1,137 @@
-import java.util.Scanner;
+import java.util.*;
+	class TestIsoscele{
+		public static void main(String arg[]){
+			Scanner input=new Scanner(System.in);
+			String vuota;
+			int lato1,lato2,lato3,scelta,p;
+			double a;
+			Isoscele i=null;
+			
+			do{
+				System.out.println("premi 0 per uscire");
+				System.out.println("premi 1 per creare un triangolo");
+				System.out.println("premi 2 per visualizzare i lati");
+				System.out.println("premi 3 per dire se e' un triangolo");
+				System.out.println("premi 4 per dire se e' un triangolo isoscele");
+				System.out.println("premi 5 per calcolare l'altezza");
+				System.out.println("premi 6 per calcolare il perimetro");
+				System.out.println("premi 7 per calcolare l'area");
+				scelta=input.nextInt();
+				vuota=input.nextLine();
+				switch(scelta){
+					case 0:
+						break;
 
-public class TestIsoscele {   
-    public static void main (String arg[]){
-        int scelta, ob, base, perimetro, altezza;
-        double area;
-        Scanner scanner = new Scanner(System.in);
-        Isoscele i=null;
-        
-        do{
-            System.out.println("0. esci");
-            System.out.println("1. Crea un triangolo isoscele");
-            System.out.println("2. Visualizza i lati");
-            System.out.println("3. Controlla se è un triangolo");
-            System.out.println("4. Calcola altezza");
-            System.out.println("5. Calcola perimetro");
-            System.out.println("6. calcola area");
+					case 1:
+						do{
+							System.out.println("inserisci primo lato");
+							lato1=input.nextInt();
+							if(lato1<1){
+								System.out.println("valore non valido");
+							}
+						}while(lato1<1);
+						do{
+							System.out.println("inserisci secondo lato");
+							lato2=input.nextInt();
+							if(lato2<1){
+								System.out.println("valore non valido");
+							}
+						}while(lato2<1);
+						do{
+							System.out.println("inserisci terzo lato");
+							lato3=input.nextInt();
+							if(lato3<1){
+								System.out.println("valore non valido");
+							}
+						}while(lato3<1);
+						i=new Isoscele(lato1,lato2,lato3);
+					break;
 
-            scelta = scanner.nextInt();
-            scanner.nextLine();
+					case 2:
+						if(i!=null){
+							i.visualizza();
+						}
+						else{
+							System.out.println("prima premi 1");
+						}
+						break;
 
-            switch(scelta){
-                case 0:
-                    break;
-                case 1:
-                    do{
-                        System.out.println("Inserisci il lato obliquo del triangolo isoscele");
-                        ob = scanner.nextInt();
-                        scanner.nextLine();
-                        if(ob < 1){
-                            System.out.println("errore");
-                        }
-                    }while(ob < 1);
-                    do{
-                        System.out.println("Inserisci la base del triangolo isoscele");
-                        base = scanner.nextInt();
-                        scanner.nextLine();
-                        if(base<1){
-                            System.out.println("errore");
-                        }
-                    }while(base<1);
-                    do{
-                        System.out.println("Inserisci l'altezza del triangolo isoscele");
-                        altezza = scanner.nextInt();
-                        scanner.nextLine();
-                        if(base<1){
-                            System.out.println("errore");
-                        }
-                    }while(altezza<1);
-                    i=new Isoscele(ob,ob,base,altezza);
-                    break;
-                case 2:
-                    i.visualizza();
-                    break;
-                case 3:
-                    
-                    break;
-                default:
-                    System.out.println("Scelta non prevista");
-                    break;
-            }
-        }while(scelta != 0);
-    }
-}
+					case 3:
+						if(i!=null){
+							if(i.isTri()){
+								System.out.println("i lati formano un triangolo");
+							}
+							else{
+								System.out.println("i lati non formano un triangolo");
+							}
+						}
+						else{
+							System.out.println("prima premi 1");
+						}
+						break;
+
+
+					case 4:
+						if((i!=null)&&(i.isTri()==true)){
+							if(i.controllaLati()){
+								System.out.println("e' un triangolo isoscele");
+							}
+							else{
+								System.out.println("non e' un triangolo isoscele");
+							}
+						}
+						else{
+							System.out.println("prima premi 1");
+						}
+						break;
+					case 5:
+						if((i!=null)&&(i.isTri()==true)){
+							if(i.controllaLati()){	
+								i.calcolaAltezza();
+								System.out.println("altezza:"+i.altezza);
+							}
+							else{
+								System.out.println("non e' un triangolo isoscele");
+							}
+						}
+						else{
+							System.out.println("prima premi 1");
+						}
+						break;
+
+					case 6:
+						if((i!=null)&&(i.isTri()==true)){
+							if(i.controllaLati()){	
+								p=i.perimetro();
+								System.out.println("perimetro:"+p);
+							}
+							else{
+								System.out.println("non e' un triangolo isoscele");
+							}
+						}
+						else{
+							System.out.println("prima premi 1");
+						}
+						break;
+
+					case 7:
+						if((i!=null)&&(i.isTri()==true)){
+							if(i.controllaLati()){	
+								a=i.area();
+								System.out.println("area:"+a);
+							}
+							else{
+								System.out.println("non e' un triangolo isoscele");
+							}
+						}
+						else{
+							System.out.println("prima premi 1");
+						}
+						break;
+					default:
+						System.out.println("scelta sbagliata");
+				}
+						
+			}while(scelta!=0);
+		}
+	}

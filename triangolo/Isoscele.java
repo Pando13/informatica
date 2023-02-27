@@ -1,49 +1,43 @@
-public class Isoscele extends Triangolo{
+class Isoscele extends Triangolo{
+	double altezza;
+	int base,lato_obliquo;
 
-    int base, obliquo;
+	public Isoscele(int lato1,int lato2,int lato3){
+		super(lato1,lato2,lato3);
+	}
 
-    public Isoscele(int lato1, int lato2, int lato3, double altezza){
-        super(lato1, lato2, lato3);      
-        this.altezza = altezza;
-        this.base = -1;
-        this.obliquo = -1;
-    }
+	boolean controllaLati(){
+		if(lato1==lato2){
+			base=lato3;
+			lato_obliquo=lato1;
+			return true;
+		}
+		else{
+			if(lato1==lato3){
+				base=lato2;
+				lato_obliquo=lato1;
+				return true;
+			}
+			else{
+				if(lato2==lato3){
+					base=lato1;
+					lato_obliquo=lato2;
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+		}
+	}
 
-    public void calcolaBase (){
-        if((this.base < 0) || (this.obliquo < 0)){
-            if(this.lato1 == this.lato2){
-                this.base = lato3;
-                this.obliquo = lato2;
-            }
+	void calcolaAltezza(){
+		altezza=Math.sqrt(Math.pow((double)lato_obliquo,2)-Math.pow((double)base/2,2));
+	}
 
-            if(this.lato2 == this.lato3){
-                this.base = lato1;
-                this.obliquo = lato2;
-            }
-
-            if(this.lato1 == this.lato3){
-                this.base = lato2;
-                this.obliquo = lato3;
-            }
-            
-        }             
-        
-    } 
-
-    public boolean isIsoscele (){
-        if((this.lato1 == this.lato2) || (this.lato2 == this.lato3) || (this.lato1 == this.lato3)){
-            return true;
-        }
-
-        return false;
-    }
-
-    public double calcolaArea(){
-        if(this.base > -1){
-            return this.base * this.altezza / 2;
-        }
-
-        return -1;
-    }
-
+	double area(){
+		double a;
+		a=base*altezza/2;
+		return a;
+	}
 }

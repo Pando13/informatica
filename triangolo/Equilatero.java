@@ -1,26 +1,29 @@
-public class Equilatero extends Triangolo {
+class Equilatero extends Triangolo{
+	double altezza;
 
-    public Equilatero (int lato){
-        super(lato, lato, lato);
-        this.altezza = -1;
-    }
+	public Equilatero(int lato){
+		super(lato,lato,lato);
+	}
 
-    public double calcolaAltezza (){
-        this.altezza =  Math.sqrt((double) 3 / 4) * this.lato1;
-        return this.altezza;
-    } 
-    
-    public int getLato (){
-        return this.lato1;
-    }
+	void visualizza(){
+		super.visualizza();
+		System.out.println("altezza:"+altezza);
+	}
 
-    public double calcolaArea(){
-        if(this.altezza > -1){
-            this.area = this.lato1 * this.altezza / 2;
-            return this.area;
-        }
+	double calcolaAltezza(){
+		altezza=Math.sqrt(Math.pow(lato1,2)-Math.pow((double)lato1/2,2));
+		return altezza;
+	}
 
-        return -1;
-    }
-    
+	int calcolaPerimetro(){
+		int perimetro;
+		perimetro=this.lato1*3;
+		return perimetro;
+	}
+
+	double calcolaArea(){
+		double a;
+		a=lato1*altezza/2;
+		return a;
+	}
 }
