@@ -5,6 +5,7 @@ import java.util.*;
 			String vuota;
 			int lato1,lato2,lato3,scelta,p;
 			double a;
+			boolean errore;
 			Isoscele i=null;
 			
 			do{
@@ -16,8 +17,17 @@ import java.util.*;
 				System.out.println("premi 5 per calcolare l'altezza");
 				System.out.println("premi 6 per calcolare il perimetro");
 				System.out.println("premi 7 per calcolare l'area");
-				scelta=input.nextInt();
-				vuota=input.nextLine();
+				do {
+					errore=false;
+					try{
+						scelta=input.nextInt();
+						vuota=input.nextLine();
+					}
+					catch(InputMismatchException e){
+						errore=true;
+						System.out.println("inserire un numero da 0-7");
+					}
+				}while(errore);
 				switch(scelta){
 					case 0:
 						break;
