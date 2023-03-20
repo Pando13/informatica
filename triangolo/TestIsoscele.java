@@ -17,17 +17,19 @@ import java.util.*;
 				System.out.println("premi 5 per calcolare l'altezza");
 				System.out.println("premi 6 per calcolare il perimetro");
 				System.out.println("premi 7 per calcolare l'area");
-				do {
-					errore=false;
+				errore=true;
+				scelta=0;
+				while(errore){
 					try{
 						scelta=input.nextInt();
 						vuota=input.nextLine();
+						errore=false;
 					}
 					catch(InputMismatchException e){
+						System.out.println("inserisci un numero 0-7");
 						errore=true;
-						System.out.println("inserire un numero da 0-7");
 					}
-				}while(errore);
+				}
 				switch(scelta){
 					case 0:
 						break;
