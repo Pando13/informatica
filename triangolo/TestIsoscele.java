@@ -22,10 +22,10 @@ import java.util.*;
 				while(errore){
 					try{
 						scelta=input.nextInt();
-						vuota=input.nextLine();
 						errore=false;
 					}
 					catch(InputMismatchException e){
+						vuota=input.nextLine();
 						System.out.println("inserisci un numero 0-7");
 						errore=true;
 					}
