@@ -12,5 +12,13 @@ public class contatto {
         this.mail=mail;
         this.numero=numero;
     }
+
+    public void visualizza(){
+        System.out.println("cognome: "+cognome);
+        System.out.println("nome: "+nome);
+        System.out.println("indirizzo: "+indirizzo);
+        System.out.println("mail: "+mail);
+        System.out.println("numero: "+numero);
+    }
     
 }
