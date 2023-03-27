@@ -37,6 +37,12 @@ public class TestRubrica {
                         contatto.visualizza();
                     }
                     break;
+
+                case 3:
+                    do {
+                        
+                    } while ((i<0)||(i>=rubrica.size()));
+
                 default:
                     break;
             }
