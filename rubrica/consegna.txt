@@ -5,7 +5,7 @@ La rubrica deve contenere cognome,nome,numero cellulare,indirizzo e-mail.
     premi 0 per uscire
     premi 1 per inserire un contatto nella rubrica
     premi 2 per visualizzare la rubrica
-    premi 3 per rimuovere una voce
+    premi 3 per rimuovere una voce tramite cognome e nome
     premi 4 per modificare un contatto nella rubrica.
         Gestire per questo un sottomenù con le seguenti voci:
         premi 0 per uscire
