@@ -49,6 +49,7 @@ public class TestRubrica {
                         if((cognome.compareTo(rubrica.get(i).cognome)==0) && (nome.compareTo(rubrica.get(i).nome)==0)){
                             trovato=true;
                             rubrica.remove(i);
+                            System.out.println("contatto rimosso");
                         }
                     }
                     if(!trovato){
