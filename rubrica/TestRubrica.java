@@ -57,6 +57,53 @@ public class TestRubrica {
                     }
                     break;
 
+                case 4:
+                    do{
+                        System.out.println("inserisci indice contatto da modificare");
+                        i=input.nextInt();
+                        vuota=input.nextLine();
+                        if((i<0)||(i>=rubrica.size())){
+                            System.out.println("indice non esistente");
+                        }
+                    }while((i<0)||(i>=rubrica.size()));
+                    contatto=rubrica.get(i);
+                    contatto.visualizza();
+                    System.out.println("premi 0 per uscire, 1 per modificare cognome, 2 per modificare nome, 3 per modificare telefono, premi 4 per email");
+                    scelta2=input.nextInt();
+                    vuota=input.nextLine();
+                    switch(scelta2){
+                        case 0:
+                            break;
+
+                        case 1:
+                            System.out.println("nuovo valore di cognome");
+                            contatto.cognome=input.nextLine();
+                            rubrica.set(i,contatto);
+                            break;
+
+                        case 2:
+                            System.out.println("nuovo valore di nome");
+                            contatto.nome=input.nextLine();
+                            rubrica.set(i,contatto);
+                            break;
+
+                        case 3:
+                            System.out.println("nuovo valore di telefono");
+                            contatto.numero=input.nextInt();
+                            vuota=input.nextLine();
+                            rubrica.set(i,contatto);
+                            break;
+
+                        case 4:
+                            System.out.println("nuovo valore di email");
+                            contatto.mail=input.nextLine();
+                            rubrica.set(i,contatto);
+                            break;						
+                        default:
+                            System.out.println("scelta non prevista");
+                    }
+                    break;
+
                 default:
                     break;
             }
