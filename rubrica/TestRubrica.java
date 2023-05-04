@@ -35,7 +35,7 @@ public class TestRubrica {
                 case 2:
                     for(i=0;i<rubrica.size();i++){
                         System.out.println("CONTATTO INDICE "+(i));
-                        contatto.visualizza();
+                        rubrica.get(i).visualizza();
                     }
                     break;
 
@@ -98,10 +98,29 @@ public class TestRubrica {
                             System.out.println("nuovo valore di email");
                             contatto.mail=input.nextLine();
                             rubrica.set(i,contatto);
-                            break;						
+                            break;
+
                         default:
                             System.out.println("scelta non prevista");
                     }
+                    break;
+                            
+                case 5:
+                boolean input_ok=false;
+                while(input_ok==false){
+                    try{
+                        System.out.println("dammi un numero");
+                        i=input.nextInt();
+                        input_ok=true;
+                    
+                    }
+                    catch(InputMismatchException e){
+                        vuota=input.nextLine();
+                        System.out.println("errore, non hai digitato un numero");
+                        input_ok=false;
+                    }
+                }
+
                     break;
 
                 default:

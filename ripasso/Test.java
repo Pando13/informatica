@@ -26,7 +26,26 @@ public class Test {
                 case 2:
                     for (i=0;i<poligono.size();i++) {
                         p=poligono.get(i);
-                        
+                        p.visualizza();
+                    }
+                    break;
+
+                case 3:
+                //  ArithmeticException
+                //  ArrayIndexOutOfBoundsException 
+                //  InputMismatchException 
+                    boolean input_ok=false;
+                    while(input_ok==false){
+                        try{
+                            System.out.println("dammi un numero");
+                            num=input.nextInt();
+                            input_ok=true;
+                        }
+                        catch(InputMismatchException e){
+                            vuota=input.nextLine();
+                            System.out.println("errore, non hai digitato un intero");
+                            input_ok=false;
+                        }
                     }
                     break;
 
